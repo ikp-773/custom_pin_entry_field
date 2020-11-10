@@ -1,8 +1,8 @@
 name: custom_pin_entry_field
 description: A fully user customizable Pin Entry Field.
 version: 0.0.1
-author:
-homepage:
+author: Abhijith Kp <abhijithkp773@gmail.com>
+homepage: https://github.com/ikp-773/custom_pin_entry_field
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
