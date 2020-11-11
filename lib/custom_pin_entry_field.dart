@@ -21,7 +21,7 @@ class CustomPinEntryField extends StatefulWidget {
       this.fields = 4,
       this.onSubmit,
       this.fieldWidth = 40.0,
-      this.fontSize = 20.0,
+      this.fontSize = 18.0,
       this.showCursor = false,
       this.isTextObscure = false,
       this.showFieldAsBox = false,
