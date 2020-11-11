@@ -12,16 +12,20 @@ class CustomPinEntryField extends StatefulWidget {
   final isTextObscure;
   final showFieldAsBox;
   final InputDecoration decoration;
+  final bool showCursor;
+  final TextInputType keyboard;
 
   CustomPinEntryField(
       {this.lastPin,
       this.decoration,
-      this.fields: 4,
+      this.fields = 4,
       this.onSubmit,
-      this.fieldWidth: 40.0,
-      this.fontSize: 20.0,
-      this.isTextObscure: false,
-      this.showFieldAsBox: false})
+      this.fieldWidth = 40.0,
+      this.fontSize = 20.0,
+      this.showCursor = false,
+      this.isTextObscure = false,
+      this.showFieldAsBox = false,
+      this.keyboard = TextInputType.number})
       : assert(fields > 0);
 
   @override
@@ -35,7 +39,7 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
   List<FocusNode> _focusNodes;
   List<TextEditingController> _textControllers;
 
-  Widget textfields = Container();
+  Widget otpFields = Container();
 
   @override
   void initState() {
@@ -50,7 +54,7 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
             _pin[i] = widget.lastPin[i];
           }
         }
-        textfields = generateTextFields(context);
+        otpFields = generateTextFields(context);
       });
     });
   }
@@ -105,8 +109,9 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
       margin: EdgeInsets.only(right: 10.0),
       child: TextField(
         autofocus: true,
+        showCursor: widget.showCursor,
         controller: _textControllers[i],
-        keyboardType: TextInputType.number,
+        keyboardType: widget.keyboard,
         textAlign: TextAlign.center,
         maxLength: 1,
         style: TextStyle(
@@ -175,6 +180,6 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
 
   @override
   Widget build(BuildContext context) {
-    return textfields;
+    return otpFields;
   }
 }
