@@ -27,7 +27,7 @@ Install the latest version from [pub](https://pub.dartlang.org/packages/custom_p
 Add this to your package's pubspec.yaml file:
 ```
 dependencies:
-  custom_pin_entry_field: ^1.0.1
+  custom_pin_entry_field: ^1.0.2
 ```
 ### 2. Install it
 You can install packages from the command line:
