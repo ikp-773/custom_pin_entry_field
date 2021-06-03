@@ -7,6 +7,10 @@
 
 ## [1.0.1] - 11.11.2020
 
-* Hideable cursor.
+* Hidden cursor.
 * onSubmit to handle submits, validation and navigation after text changed.
 * Automatically focuses to the next node.
+
+## [2.0.1] - 11.11.2020
+
+* Migrated null safety

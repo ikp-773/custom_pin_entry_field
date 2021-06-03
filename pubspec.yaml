@@ -1,11 +1,11 @@
 name: custom_pin_entry_field
 description: A fully user customizable Pin Entry Field.
-version: 1.0.2
+version: 2.0.1
 author: Abhijith Kp <abhijithkp773@gmail.com>
 homepage: https://github.com/ikp-773/custom_pin_entry_field
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0 <2.0.0"
 
 dependencies:
