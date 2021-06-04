@@ -18,3 +18,4 @@
 ## [2.0.1] - 11.11.2020
 
 * Fixed Flutter 2 compatibility
+* Supports flutter web
