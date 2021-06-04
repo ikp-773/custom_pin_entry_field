@@ -14,3 +14,7 @@
 ## [2.0.1] - 11.11.2020
 
 * Migrated null safety
+
+## [2.0.1] - 11.11.2020
+
+* Fixed Flutter 2 compatibility

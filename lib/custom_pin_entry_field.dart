@@ -7,8 +7,8 @@ class CustomPinEntryField extends StatefulWidget {
   final String? lastPin;
   final int fields;
   final onSubmit;
-  final fieldWidth;
-  final fontSize;
+  final double fieldWidth;
+  final double fontSize;
   final isTextObscure;
   final showFieldAsBox;
   final InputDecoration? decoration;
@@ -44,10 +44,10 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
   @override
   void initState() {
     super.initState();
-    _pin = List<String?>.filled(widget.fields, null, growable: false);
-    _focusNodes = List<FocusNode?>.filled(widget.fields, null, growable: false);
+    _pin = List<String?>.filled(widget.fields, null, growable: true);
+    _focusNodes = List<FocusNode?>.filled(widget.fields, null, growable: true);
     _textControllers = List<TextEditingController?>.filled(widget.fields, null,
-        growable: false);
+        growable: true);
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       setState(() {
         if (widget.lastPin != null) {
@@ -114,7 +114,6 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
         controller: _textControllers[i],
         keyboardType: widget.keyboard,
         textAlign: TextAlign.center,
-        maxLength: 1,
         style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Color(0xff393e58),
