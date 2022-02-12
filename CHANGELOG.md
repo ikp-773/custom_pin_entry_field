@@ -19,3 +19,7 @@
 
 * Fixed Flutter 2 compatibility
 * Supports flutter web
+
+## [2.0.3] - 11.11.2020
+
+* > Can add textStyle to the pin

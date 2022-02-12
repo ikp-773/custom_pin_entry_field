@@ -42,3 +42,10 @@ Now in your project level Dart code, you can use:
 ```
 import 'package:custom_pin_entry_field/custom_pin_entry_field.dart';
 ```
+
+# Contributors
+
+
+<a href="https://github.com/ikp-773/custom_pin_entry_field/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ikp-773/custom_pin_entry_field" /></a>
+
