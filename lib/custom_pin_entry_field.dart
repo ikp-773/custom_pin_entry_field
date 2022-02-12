@@ -8,7 +8,7 @@ class CustomPinEntryField extends StatefulWidget {
   final int fields;
   final onSubmit;
   final double fieldWidth;
-  final double fontSize;
+  final textStyle;
   final isTextObscure;
   final showFieldAsBox;
   final InputDecoration? decoration;
@@ -21,7 +21,11 @@ class CustomPinEntryField extends StatefulWidget {
       this.fields = 4,
       this.onSubmit,
       this.fieldWidth = 40.0,
-      this.fontSize = 18.0,
+      this.textStyle = const TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color(0xff393e58),
+        fontSize: 18.0,
+      ),
       this.showCursor = false,
       this.isTextObscure = false,
       this.showFieldAsBox = false,
@@ -114,10 +118,7 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
         controller: _textControllers[i],
         keyboardType: widget.keyboard,
         textAlign: TextAlign.center,
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Color(0xff393e58),
-            fontSize: widget.fontSize),
+        style: widget.textStyle,
         focusNode: _focusNodes[i],
         obscureText: widget.isTextObscure,
         decoration: widget.decoration ??
