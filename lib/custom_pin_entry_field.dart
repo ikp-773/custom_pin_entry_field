@@ -182,12 +182,14 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
               FocusScope.of(context).requestFocus(_focusNodes[i - 1]);
             }
           }
-          if (_pin.every((String? digit) => digit != null && digit != '')) {
+          if (_pin.every((String? digit) => digit != null && digit != '') &&
+              widget.onSubmit != null) {
             widget.onSubmit(_pin.join());
           }
         },
         onSubmitted: (String str) {
-          if (_pin.every((String? digit) => digit != null && digit != '')) {
+          if (_pin.every((String? digit) => digit != null && digit != '') &&
+              widget.onSubmit != null) {
             widget.onSubmit(_pin.join());
           }
         },
