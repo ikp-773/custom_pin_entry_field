@@ -93,7 +93,22 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
 
   Widget buildTextField(int i, BuildContext context) {
     if (_focusNodes[i] == null) {
-      _focusNodes[i] = FocusNode();
+      _focusNodes[i] =
+          FocusNode(onKeyEvent: (FocusNode focusNode, KeyEvent event) {
+        if (event.logicalKey == LogicalKeyboardKey.backspace &&
+            event is KeyDownEvent) {
+          if (_textControllers[i]!.text.isEmpty) {
+            if (i > 0) {
+              FocusScope.of(context).requestFocus(_focusNodes[i - 1]);
+              _textControllers[i - 1]!.text = '';
+            }
+          } else {
+            _textControllers[i]!.text = '';
+          }
+          return KeyEventResult.handled;
+        }
+        return KeyEventResult.ignored;
+      });
     }
     if (_textControllers[i] == null) {
       _textControllers[i] = TextEditingController();
@@ -156,7 +171,8 @@ class CustomPinEntryFieldState extends State<CustomPinEntryField> {
           if (i + 1 != widget.fields) {
             _focusNodes[i]!.unfocus();
             if (lastDigit != null && _pin[i] == '') {
-              FocusScope.of(context).requestFocus(_focusNodes[i - 1]);
+              if (i > 0)
+                FocusScope.of(context).requestFocus(_focusNodes[i - 1]);
             } else {
               FocusScope.of(context).requestFocus(_focusNodes[i + 1]);
             }
