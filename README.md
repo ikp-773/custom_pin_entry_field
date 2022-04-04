@@ -4,6 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 ![GitHub top language](https://img.shields.io/github/languages/top/ikp-773/custom_pin_entry_field)
 ![Platform Support](https://img.shields.io/badge/platform-ios%20%7C%20android%20%7C%20web-green)
+[![wakatime](https://wakatime.com/badge/github/ikp-773/custom_pin_entry_field.svg)](https://wakatime.com/badge/github/ikp-773/custom_pin_entry_field)
 
 A fully user customizable Pin Entry Field.
 It supports all the platforms [flutter](https://github.com/flutter/flutter) supports.
